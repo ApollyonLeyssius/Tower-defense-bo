@@ -9,7 +9,8 @@ Datum: 08-09-2025
 Mijn game is een tower defense game, deze zijn leuk om te spelen en ontspannen. Het is perfect na een dag werken.
 
 ## Schets van je level en UI
-TBD
+<img width="768" height="409" alt="concept" src="https://github.com/user-attachments/assets/4c526667-fec0-4f68-8545-61299be2903d" />
+
 
 ## Toren
 Toren 1 Hanabi, Bereik 10 meter, schade gemiddeld, basic schieter niks speciaals
