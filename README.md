@@ -13,8 +13,8 @@ Mijn game is een tower defense game, deze zijn leuk om te spelen en ontspannen. 
 
 
 ## Toren
-Toren 1 Hanabi, Bereik 10 meter, schade gemiddeld, basic schieter niks speciaals
-Toren 2 Torii Bereik 2 meter, hoge schade, shotgun achtig.
+Toren 1 Apollyon, Bereik 10 meter, schade gemiddeld, basic schieter niks speciaals
+Toren 2 Atarah, Bereik 2 meter, hoge schade, shotgun achtig.
 Meer komen later
 
 ## Vijanden
