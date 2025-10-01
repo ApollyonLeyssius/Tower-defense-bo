@@ -5,6 +5,8 @@ Klas: GD2A
 
 Datum: 08-09-2025
 
+Trello: https://trello.com/b/aoGgXDgA/tower-defense-bo
+
 ## Titel: (TBD)
 Mijn game is een tower defense game, deze zijn leuk om te spelen en ontspannen. Het is perfect na een dag werken.
 
