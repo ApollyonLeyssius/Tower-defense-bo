@@ -13,7 +13,18 @@ Mijn game is een tower defense game, deze zijn leuk om te spelen en ontspannen. 
 ## Schets van je level en UI
 <img width="768" height="409" alt="concept" src="https://github.com/user-attachments/assets/4c526667-fec0-4f68-8545-61299be2903d" />
 
-
+## script
+```` cs
+        for (int i = 0; i < targets.Length; i++) 
+        {
+            float distance = Vector3.Distance(transform.position, targets[i].transform.position);
+            if (distance < nearestDistance) 
+            {
+                nearestDistance = distance;
+                firepoint = targets[i].transform;
+            }
+        }
+````
 ## Toren
 Toren 1 Apollyon, Bereik 10 meter, schade gemiddeld, basic schieter niks speciaals
 Toren 2 Atarah, Bereik 2 meter, hoge schade, shotgun achtig.
