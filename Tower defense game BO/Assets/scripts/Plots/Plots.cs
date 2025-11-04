@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Plots : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Color hoverColor;
 
-    private GameObject Towers;
+    private GameObject Towersobj;
+    public Tower Tower;
     private Color originalColor;
 
     private void OnMouseEnter()
@@ -22,20 +24,36 @@ public class Plots : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (Towers != null) return;
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
 
-        GameObject TowersToBuild = buildManager.main.GetTowerSel();
-        Towers = Instantiate(TowersToBuild, transform.position, Quaternion.identity);
+        if (Towersobj != null)
+        { 
+            Tower.OpenUpgradeUI();
+            return;
+        }
+
+        tower towersToBuild = buildManager.main.GetTowerSel();
+
+        if (towersToBuild.cost > MoneyUpdate.main.money)
+        {
+            Debug.Log("WHAT?! NO MONEY?!");
+            return;
+        }
+
+        MoneyUpdate.main.SpendMoney(towersToBuild.cost);
+
+        Towersobj = Instantiate(towersToBuild.prefab, transform.position, Quaternion.identity);
+        Tower = Towersobj.GetComponent<Tower>();
+    }
+
+    public void SetSelected()
+    {
+    
     }
     // Start is called before the first frame update
     void Start()
     {
         originalColor = sr.color;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

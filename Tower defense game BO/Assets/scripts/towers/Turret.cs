@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
 
-public class Tower : MonoBehaviour
+public class Turret : MonoBehaviour
 {
     [SerializeField] private float Range = 2f;
     //[SerializeField] private float FireRate = 1f;
@@ -45,13 +41,10 @@ public class Tower : MonoBehaviour
 
         BPS = CalculateShootspeed();
 
-        Range = CalculateRange();
-
         CloseUpgradeUI();
         Debug.Log("Tower Upgraded to level " + upgradeLevel);
         Debug.Log("New shoot interval: " + BPS);
         Debug.Log("Next upgrade cost: " + CalculateUpgradeCost());
-        Debug.Log("New Range: " + Range);
     }
 
     private int CalculateUpgradeCost()
@@ -62,13 +55,7 @@ public class Tower : MonoBehaviour
     private float CalculateShootspeed()
     {
         float factor = Mathf.Pow(upgradeLevel, 0.2f);
-        return BPS * factor;
-    }
-
-    private float CalculateRange()
-    {
-        float factor = Mathf.Pow(upgradeLevel, 0.3f);
-        return Range * factor;
+        return BPS / factor;
     }
 
     private bool CheckTargetInRange()

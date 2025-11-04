@@ -10,7 +10,7 @@ public class EnemeySpawner : MonoBehaviour
     [SerializeField] private GameObject[] enemyPrefab;
 
     [SerializeField] private float timeBetweenEnemy = 1f;
-    [SerializeField] private int BaseEnemies = 8;
+    [SerializeField] private int BaseEnemies = 10;
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float diffScalingFactor = 0.75f;
 
@@ -64,6 +64,7 @@ public class EnemeySpawner : MonoBehaviour
         {
             Endwave();
         }
+
     }
 
     private IEnumerator StartWave()
@@ -87,13 +88,4 @@ public class EnemeySpawner : MonoBehaviour
         GameObject prefabToSpawn = enemyPrefab[0];
         Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
     }
-
-    /*private void SpawnEnemy()
-    { 
-        while (true)
-        {
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(timeBetweenEnemy);
-        }
-    }*/
 }

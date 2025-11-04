@@ -6,37 +6,35 @@ using System;
 public class projectile : MonoBehaviour
 {
     [SerializeField] public Transform target;
-    [SerializeField] private float speed = 10;
+    [SerializeField] private float speed = 10f;
+    private int damage = 1;
+    private Vector3 lastDirection;
     public static event Action OnEnemyHit;
-    private bool IsDestroyed = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy") && !IsDestroyed)
+        if (other.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
             Destroy(gameObject);
-            IsDestroyed = true;
             OnEnemyHit?.Invoke();
-            EnemeySpawner.onEnemyDestroy?.Invoke();
         }
-
-
-    }
-    // Start is called before the first frame update
-    void Start()
-    {    
     }
 
-    // Update is called once per frame
     void Update()
     {
-            if (target == null)
-            {
-                Destroy(gameObject, 0f);
-                return;
-            }
-
-            transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+        if (target != null)
+        {
+            Vector3 direction = (target.position - transform.position).normalized;
+            lastDirection = direction;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+            transform.position += direction * speed * Time.deltaTime;
+        }
+        else
+        {
+            transform.position += lastDirection * speed * Time.deltaTime;
+            Destroy(gameObject, 3f);
+        }
     }
 }

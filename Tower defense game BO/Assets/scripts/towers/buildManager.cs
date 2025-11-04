@@ -6,7 +6,8 @@ public class buildManager : MonoBehaviour
 {
 
     public static buildManager main;
-    [SerializeField] private GameObject[] towerPrefabs;
+    //[SerializeField] private GameObject[] towerPrefabs;
+    [SerializeField] private tower[] towers;
 
     private int SelectedTower = 0;
 
@@ -15,9 +16,14 @@ public class buildManager : MonoBehaviour
         main = this;
     }
 
-    public GameObject GetTowerSel()
+    public tower GetTowerSel()
     {
-        return towerPrefabs[SelectedTower];
+        return towers[SelectedTower];
+    }
+
+    public void SetTowerSel(int _SelectedTower)
+    {
+        SelectedTower = _SelectedTower;
     }
     // Start is called before the first frame update
     void Start()
