@@ -14,13 +14,11 @@ Mijn game is een tower defense game, deze zijn leuk om te spelen en ontspannen. 
 <img width="768" height="409" alt="concept" src="https://github.com/user-attachments/assets/4c526667-fec0-4f68-8545-61299be2903d" />
 
 ## Toren
-Toren 1 Apollyon, Bereik 10 meter, schade gemiddeld, basic schieter niks speciaals
-Toren 2 Atarah, Bereik 2 meter, hoge schade, shotgun achtig.
-Meer komen later
+Toren 1 Standaard, Bereik 3 meter, schade gemiddeld, Schiet met 1 kogel per seconden
+Toren 2 Snel, Bereik 4 meter, Sneller schieten, Hogere schade per seconden.
 
 ## Vijanden
-Vijand 1 Slime, gemiddelde snelheid, 3 levens, basic vijand
-vijand 2 Necromancer, langzaam, 6 levens, maakt meer vijanden. 
+Vijand 1 cirkel, gemiddelde snelheid, 2 levens, basic vijand 
 
 ## Gameplay loop
 1. Start de game
@@ -35,15 +33,15 @@ De meer waves je doet de meer vijanden komen en hoe sterker ze worden. Je krijgt
 ## Risico’s en oplossingen volgens PIO
 Probleem 1: Vijanden maken
 Impact hoog
-Oplossing: Blijven proberen
+Oplossing: Goed de code schrijven en kijken of er bugs komen.
 
 Probleem 2: Towers maken
 Impact: hoog
-Oplossing: Veel videos kijken
+Oplossing: Goed kijken naar voorbeelden en mijn kennis gebruiken.
 
 Probleem 3: Economie
 Impact: gemiddeld
-Oplossing: Nog meer videos kijken
+Oplossing: Kijken wat een goede prijs is voor alles en het laten play testen, zodat niks te sterk is.
 
 ## Planning per sprint en mechanics
 Sprint 1 mechanics: Towers
@@ -75,17 +73,17 @@ Acceptatie: Het werkt goed
 Waves en spawnen
 Keuze: Waves beginnen pas als iedereen dood is
 Risico: checken of alles dood is
-Oplossing: Check goed of iedereen dood is
+Oplossing: Hard coden, zodat het niet fout kan gaan. 
 Acceptatie: De wave start nadat iedereen dood is
 
 11.4 Economie en levens
 Keuze: Geld krijg je nadat je iets dood maakt
 Risico: geen geld krijgen
-Oplossing: goed geld geven
+Oplossing: Ervoor zorgen dat je geld krijgt na elke keer dan een vijand dood gaat.
 Acceptatie: Geld krijgen
 
 11.5 UI basis
 Keuze: geld levens en towers plaatsen
-Risico: Te druk
-Oplossing: rustig maken
+Risico: Te veel ruimte in nemen
+Oplossing: Alles de juiste maat maken en goed verdeelt.
 Acceptatie: een goed overzichtelijk ui
