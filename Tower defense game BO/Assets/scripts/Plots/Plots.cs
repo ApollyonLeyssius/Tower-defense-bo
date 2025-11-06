@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -28,7 +26,7 @@ public class Plots : MonoBehaviour
             return;
 
         if (Towersobj != null)
-        { 
+        {
             Tower.OpenUpgradeUI();
             return;
         }
@@ -49,7 +47,7 @@ public class Plots : MonoBehaviour
 
     public void SetSelected()
     {
-    
+
     }
     // Start is called before the first frame update
     void Start()
